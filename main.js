@@ -3,7 +3,7 @@ $(document).ready(() => {
     ? JSON.parse(localStorage.getItem("status"))
     : null;
   var { pathname } = window.location;
-  if (isLoggedIn && pathname === "/index.html") {
+  if (isLoggedIn && (pathname === "/index.html" || pathname === "/")) {
     window.history.back();
   } else if (!isLoggedIn && pathname !== "/index.html") {
     window.location.href = "/index.html";
